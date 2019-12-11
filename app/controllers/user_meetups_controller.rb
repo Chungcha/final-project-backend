@@ -1,0 +1,4 @@
+class UserMeetupsController < ApplicationController
+
+
+end

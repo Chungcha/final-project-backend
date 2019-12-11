@@ -1,0 +1,3 @@
+class WaitQueueController < ApplicationController
+
+end
