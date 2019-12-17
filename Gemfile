@@ -47,3 +47,7 @@ gem "active_model_serializers", "~> 0.10.10"
 gem "faker", "~> 2.8"
 
 gem "figaro"
+
+gem "http"
+
+gem 'OptionParser', '~> 0.5.1'

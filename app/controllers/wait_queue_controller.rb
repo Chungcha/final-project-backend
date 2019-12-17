@@ -1,6 +1,12 @@
 class WaitQueueController < ApplicationController
 
     def create 
+        if WaitQueue.where(food_choice:cuisine_params[:value].length==3)
+        
+        #PULL A RESTUARANT
+        #MAKE MEETUP
+
+
         listing = WaitQueue.create(user_id: user_params[:id], food_choice: cuisine_params[:value])
 
         byebug
@@ -11,8 +17,13 @@ class WaitQueueController < ApplicationController
         #if not, look for 3 other people.  If so, take them all and make the meetup and meetupuser/ restuarant
 
         #if not, add user to wait list.
-
     end
+
+
+
+
+
+
 
     private
 
