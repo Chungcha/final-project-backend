@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
 
-  attributes :id, :username, :first_name, :last_name, :wait_queue
+  attributes :id, :username, :first_name, :last_name, :wait_queue, :meetups
 
 end
