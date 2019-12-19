@@ -7,4 +7,8 @@ class MeetupsController < ApplicationController
         }
     end
 
+    def pastmeetups
+        # There needs to be stuff here
+    end
+
 end

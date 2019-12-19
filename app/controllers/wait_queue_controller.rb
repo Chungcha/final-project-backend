@@ -17,6 +17,13 @@ class WaitQueueController < ApplicationController
         #if not, look for 3 other people.  If so, take them all and make the meetup and meetupuser/ restuarant
 
         #if not, add user to wait list.
+
+        private
+        def user_params
+        end
+
+        
+
     end
 
 
