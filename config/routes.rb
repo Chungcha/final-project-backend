@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create]
   resources :wait_queue, only: [:create]
+  resources :meetups, only: [:show]
   post "/login", to: "auth#create"
   get '/profile', to: "users#profile"
   #am i using this?
