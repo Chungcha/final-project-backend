@@ -29,8 +29,8 @@ class RestaurantsController < ApplicationController
         WaitQueue.where(food_choice:cuisine).each do |waitqueueObj| UserMeetup.create(user_id: waitqueueObj.user_id, meetup_id:meetup.id)
             waitqueueObj.destroy
         end
-
-        return result
+        
+        return meetup
     end
 
 end
