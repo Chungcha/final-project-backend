@@ -3,9 +3,9 @@ class WaitQueueController < ApplicationController
     def create 
         listing = WaitQueue.create(user_id: user_params[:id], food_choice: cuisine_params[:value])
         if WaitQueue.where(food_choice:cuisine_params[:value]).length==4
-            restaurant = RestaurantsController.generate(cuisine_params[:value])
-            # return {result, meetup: meetup}
-            render json: restaurant
+            meetup = RestaurantsController.generate(cuisine_params[:value])
+
+            render json: {meetup: meetup}
         else
 
         render json: {waitqueue: listing}
