@@ -16,10 +16,17 @@ class UsersController < ApplicationController
         end
     end
 
+    def update
+        user = User.find(user_params[:id])
+        user.update(first_name: user_params[:first_name], last_name: user_params[:last_name], username: user_params[:username])
+
+        render json: { user: UserSerializer.new(@user)}, status: :updated
+    end
+
     private
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :password, :username)
+        params.require(:user).permit(:first_name, :last_name, :password, :username, :id)
     end
 
 end

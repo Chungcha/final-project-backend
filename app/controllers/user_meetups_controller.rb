@@ -1,4 +1,3 @@
 class UserMeetupsController < ApplicationController
 
-
 end
