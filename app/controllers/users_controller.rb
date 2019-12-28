@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
+        #need Rails.application.routes.url_helpers
         if @user.valid?
             @token = encode_token(user_id: @user.id)
             render json: { user: UserSerializer.new(@user), jwt: @token}, status: :created

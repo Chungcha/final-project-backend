@@ -20,11 +20,11 @@ class WaitQueueController < ApplicationController
     private
 
     def cuisine_params
-    params.require(:cuisine).permit(:value)
+        params.require(:cuisine).permit(:value)
     end
 
     def user_params
-    params.require(:user).permit(:id)
+        params.require(:user).permit(:id)
     end
 
 end

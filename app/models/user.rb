@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
     has_one :wait_queue
 
+    has_one_attached :avatar
+
     has_secure_password
     validates :username, uniqueness: { case_sensitive: false }
 
