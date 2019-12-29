@@ -21,7 +21,7 @@ class UsersController < ApplicationController
         user = User.find(user_params[:id])
         user.update(first_name: user_params[:first_name], last_name: user_params[:last_name], username: user_params[:username])
 
-        render json: { user: UserSerializer.new(@user)}, status: :updated
+        render json: { user: UserSerializer.new(user)}, status: :updated
     end
 
     def updateAvatar
