@@ -24,6 +24,11 @@ class UsersController < ApplicationController
         render json: { user: UserSerializer.new(@user)}, status: :updated
     end
 
+    def updateAvatar
+        current_user.update(avatar: params[:avatar])
+        render json: { user: UserSerializer.new(current_user) }
+    end
+
     private
 
     def user_params
