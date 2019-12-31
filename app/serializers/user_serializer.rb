@@ -1,6 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
 
-  attributes :id, :username, :first_name, :last_name, :wait_queue, :future_meetups, :past_meetups
+  attributes :id, :username, :first_name, :last_name, :wait_queue, :future_meetups, :past_meetups, :mantra, :occupation
   attribute :avatar, if: -> { object.avatar.attached? }
 
   def future_meetups

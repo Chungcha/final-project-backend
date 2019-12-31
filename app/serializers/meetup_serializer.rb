@@ -16,12 +16,13 @@ class MeetupSerializer < ActiveModel::Serializer
         usersArr = []
         object.users.each do |user|
             if user.avatar.attached?
-                usersArr << {user: user, avatar: Rails.application.routes.url_helpers.rails_blob_path(user.avatar, only_path: true)}
+                usersArr << {user: user, avatar: Rails.application.routes.url_helpers.rails_blob_path(user.avatar, only_path: true), userAttending: UserMeetup.where(user_id: user.id, meetup_id: object.id).first.attending}
             else
                 usersArr << {user: user, avatar: nil}
             end
         end
-
+        # byebug
+        #need to serialize this better
         usersArr
     end
 
