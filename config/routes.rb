@@ -4,11 +4,14 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :update]
   resources :wait_queue, only: [:create]
   resources :meetups, only: [:show]
+  resources :chatrooms, only: [:show,:create]
+  resources :messages, only: [:create]
   post '/toggleAttending', to: "user_meetups#update"
   post '/updateAvatar', to: "users#updateAvatar"
   post 'rails/active_storage/direct_uploads', to: 'direct_uploads#create'
   post "/login", to: "auth#create"
   get '/profile', to: "users#profile"
+  mount ActionCable.server => '/cable'
   #am i using this?
 
 end
