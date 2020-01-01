@@ -1,8 +1,7 @@
 class ChatroomsController < ApplicationController
 
     def show
-        # chatroom = Chatroom.find(params[:chatroom_id])
-        chatroom = Chatroom.find(1)
+        chatroom = Chatroom.find(params[:id])
         render json: chatroom
     end
 

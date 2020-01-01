@@ -23,7 +23,7 @@ class RestaurantsController < ApplicationController
         result = response.parse
         restaurant = Restaurant.create(yelp_id: result["id"])
 
-        meetup = Meetup.create(restaurant_id:restaurant.id, datetime:DateTime.now.advance(days: 1).middle_of_day.advance(hours: 6))
+        meetup = Meetup.create(restaurant_id:restaurant.id, datetime:DateTime.now.advance(days: -2).middle_of_day.advance(hours: 6))
         #find a better way of advancing to 6pm of the next day
 
         chatroom = Chatroom.create(meetup_id: meetup.id)
