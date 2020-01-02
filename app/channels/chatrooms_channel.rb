@@ -1,10 +1,15 @@
 class ChatroomsChannel < ApplicationCable::Channel
 
   def subscribed
-    stream_from "chatrooms_channel"
+    # byebug
+    if params[:chatroom_id].present?
+      # creates a private chat room with a unique name
+      stream_from("ChatRoom-#{(params[:chatroom_id])}")
+    end
   end
 
   def unsubscribed
+    #unsubscribe is chatroom.message.datetime  is.past? is true
   end
 
 #     # calls when a client connects to the server
